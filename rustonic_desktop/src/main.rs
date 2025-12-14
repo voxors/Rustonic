@@ -1,6 +1,7 @@
 #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
 
-use rustonic_shared::*;
+slint::include_modules!();
+
 use std::error::Error;
 
 fn main() -> Result<(), Box<dyn Error>> {
