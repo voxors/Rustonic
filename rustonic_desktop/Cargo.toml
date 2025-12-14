@@ -1,0 +1,8 @@
+[package]
+name = "rustonic_desktop"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+slint = "1.14.1"
+rustonic_shared = { path = "../rustonic_shared" }

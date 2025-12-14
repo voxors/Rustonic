@@ -3792,11 +3792,28 @@ dependencies = [
 ]
 
 [[package]]
-name = "rustonic"
+name = "rustonic_desktop"
+version = "0.1.0"
+dependencies = [
+ "rustonic_shared",
+ "slint",
+]
+
+[[package]]
+name = "rustonic_shared"
 version = "0.1.0"
 dependencies = [
  "slint",
  "slint-build",
+]
+
+[[package]]
+name = "rustonic_webapp"
+version = "0.1.0"
+dependencies = [
+ "rustonic_shared",
+ "slint",
+ "wasm-bindgen",
 ]
 
 [[package]]

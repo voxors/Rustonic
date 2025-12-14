@@ -1,0 +1,12 @@
+[package]
+name = "rustonic_webapp"
+version = "0.1.0"
+edition = "2024"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+slint = "1.14.1"
+rustonic_shared = { path = "../rustonic_shared" }
+wasm-bindgen = "0.2.106"
