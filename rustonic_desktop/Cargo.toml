@@ -7,7 +7,7 @@ edition = "2024"
 slint = "1.14.1"
 rustonic_shared = { path = "../rustonic_shared" }
 md5 = "0.8.0"
-tokio = { version = "1.48.0", features = ["full"] }
+async-compat = "0.2.5"
 
 [build-dependencies]
 slint-build = "1.14.1"
