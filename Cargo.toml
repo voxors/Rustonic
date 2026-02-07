@@ -1,7 +1,27 @@
-[workspace]
-members = [
-    "rustonic_shared",
-    "rustonic_desktop",
-    "rustonic_webapp"
-]
-resolver = "3"
+[package]
+name = "rustonic"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+slint = "1.14.1"
+md5 = "0.8.0"
+async-compat = "0.2.5"
+reqwest = "0.13.1"
+log = "0.4.21"
+
+[target.'cfg(any(target_os = "linux", target_os = "windows"))'.dependencies]
+env_logger = "0.11.3"
+
+[target.'cfg(target_arch = "wasm32")'.dependencies]
+console_log = "1.0"
+console_error_panic_hook = "0.1.7"
+wasm-bindgen = "0.2"
+wasm-bindgen-futures = "0.4"
+
+[[bin]]
+name = "rustonic"
+path = "src/main.rs"
+
+[build-dependencies]
+slint-build = "1.14.1"

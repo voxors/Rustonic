@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+    <head>
+        <style>
+            html,
+            body {
+                margin: 0;
+                padding: 0;
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+            }
+            canvas {
+                position: fixed;
+                inset: 0;
+                width: 100vw !important;
+                height: 100vh !important;
+                display: block;
+            }
+        </style>
+    </head>
+    <body>
+        <canvas
+            id="canvas"
+            unselectable="on"
+            data-slint-auto-resize-to-preferred="true"
+        </canvas>
+        <script type="module">
+            import init from "./pkg/rustonic.js";
+            init();
+        </script>
+    </body>
+</html>

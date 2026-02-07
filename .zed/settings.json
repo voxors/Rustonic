@@ -7,9 +7,12 @@
     "rust-analyzer": {
       "initialization_options": {
         "check": {
-          "command": "clippy"
-        }
-      }
-    }
-  }
+          "command": "clippy",
+        },
+        "cargo": {
+          "target": "wasm32-unknown-unknown",
+        },
+      },
+    },
+  },
 }
