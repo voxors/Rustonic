@@ -4,7 +4,7 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
-slint = "1.14.1"
+slint = { version = "1.14.1", features = ["backend-android-activity-06"]}
 md5 = "0.8.0"
 async-compat = "0.2.5"
 reqwest = { version = "0.13.1", features = ["stream"] }
@@ -20,6 +20,12 @@ tokio = { version = "1.48.0", features = ["rt", "macros", "sync"] }
 env_logger = "0.11.3"
 tokio = { version = "1.48.0", features = ["rt", "rt-multi-thread", "macros"] }
 
+[target.'cfg(target_os = "android")'.dependencies]
+android_logger = "0.14.1"
+tokio = { version = "1.48.0", features = ["rt", "rt-multi-thread", "macros"] }
+reqwest = { version = "0.13.1", default-features = false, features = ["json", "gzip", "brotli", "deflate", "native-tls"] }
+openssl = { version = "0.10", features = ["vendored"] }
+
 [target.'cfg(target_arch = "wasm32")'.dependencies]
 console_log = "1.0"
 console_error_panic_hook = "0.1.7"
@@ -31,5 +37,26 @@ wasm-streams = "0.5"
 name = "rustonic"
 path = "src/main.rs"
 
+[lib]
+crate-type = ["lib", "cdylib"]
+name = "rustonic_android"
+path = "src/lib.rs"
+
 [build-dependencies]
 slint-build = "1.14.1"
+
+[package.metadata.android]
+package = "com.github.voxors"
+resources = "android-res"
+build_targets = ["aarch64-linux-android", "x86_64-linux-android"]
+
+[package.metadata.android.sdk]
+min_sdk_version = 30
+target_sdk_version = 30
+max_sdk_version = 35
+
+[package.metadata.android.application]
+label = "Rustonic"
+
+[[package.metadata.android.uses_permission]]
+name = "android.permission.INTERNET"

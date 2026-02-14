@@ -1,3 +1,5 @@
+#![cfg(any(target_os = "linux", target_os = "windows", target_arch = "wasm32",))]
+
 mod app_main;
 mod music_player;
 mod subsonic;

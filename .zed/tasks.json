@@ -1,0 +1,17 @@
+// Project tasks configuration. See https://zed.dev/docs/tasks for documentation.
+//
+// Example:
+[
+  {
+    "label": "Run Android Rustonic",
+    "command": "adb wait-for-device && cargo apk run --target=x86_64-linux-android --lib",
+  },
+  {
+    "label": "Run Trunk",
+    "command": "trunk serve",
+  },
+  {
+    "label": "Run Desktop",
+    "command": "cargo run",
+  },
+]
